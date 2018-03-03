@@ -1,0 +1,14 @@
+
+h3{
+  color : cornflowerblue;
+  font-weight: bold;
+}
+
+body{
+  font-family: 'Nanum Pen Script', cursiv;
+  font-size: 1.5em;
+}
+
+.odd{
+  color : red;
+}
