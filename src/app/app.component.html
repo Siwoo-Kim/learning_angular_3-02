@@ -89,18 +89,19 @@
   </div>
 </div>
 -->
+<!--
 <div class="container">
   <div class="row">
     <div class="col-xm-12 col-md-8 offset-md-2">
-      <!--<app-new-account (accountAdded)="onAccountAdded($event)"></app-new-account>-->
+      &lt;!&ndash;<app-new-account (accountAdded)="onAccountAdded($event)"></app-new-account>&ndash;&gt;
       <app-new-account ></app-new-account>
       <hr>
-      <!--<app-account
+      &lt;!&ndash;<app-account
         *ngFor="let account of accounts; let i = index"
         [account]="account"
         [id]="i"
         (statusChanged)="onStatusChanged($event)"
-      ></app-account>-->
+      ></app-account>&ndash;&gt;
       <app-account
         *ngFor="let account of accounts; let i = index"
         [account]="account"
@@ -110,10 +111,49 @@
     </div>
   </div>
 </div>
+-->
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a
+          [routerLink]="['']"
+          routerLinkActive="link-active"
+          [routerLinkActiveOptions]="{exact: true}"
+          class="nav-link"
+          >Home</a></li>
+        <li class="nav-item">
+          <a
+            [routerLink]="['servers']"
+            routerLinkActive="link-active"
+            class="nav-link">Servers</a></li>
+        <li class="nav-item"><a
+          [routerLink]="['users']"
+          routerLinkActive="link-active"
+          class="nav-link">Users</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <router-outlet></router-outlet>
+    </div>
+    <!--<div class="col-12">
+      <app-home></app-home>
+    </div>
+    <div class="col-12">
+      <app-users></app-users>
+    </div>
+    <div class="col-12">
+      <app-servers2></app-servers2>
+    </div>-->
+  </div>
+</div>
 
 <!--recipe project-->
-<!--
-<app-header
+<!--<app-header
   (featureSelected)="onNavigate($event)"
 ></app-header>
 <div class="container-fluid mt-3" >
@@ -125,5 +165,4 @@
       <app-shopping-list *ngIf="loadedFeature == 'shopping-list'"></app-shopping-list>
     </div>
   </div>
-</div>
--->
+</div>-->

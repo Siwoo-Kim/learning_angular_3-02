@@ -12,3 +12,9 @@ body{
 .odd{
   color : red;
 }
+
+.link-active{
+  border-top: 2px solid darkslateblue !important;
+  font-weight: bold;
+  font-size: 1.1em;
+}

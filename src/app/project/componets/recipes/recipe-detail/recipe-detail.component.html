@@ -23,8 +23,18 @@
         Dropdown button
       </button>
       <ul class="dropdown-menu" appDropDown >
-        <a href="#" class="dropdown-item">Save Date</a>
-        <a href="#" class="dropdown-item">Fetch Date</a>
+        <a href="#"
+           class="dropdown-item"
+          (click)="onAddToShoppingList()"
+        >To Shopping List</a>
+        <a href="#"
+           class="dropdown-item"
+           (click)="onAddToShoppingList()"
+        >Edit Recipe</a>
+        <a href="#"
+           class="dropdown-item"
+           (click)="onAddToShoppingList()"
+        >Delete Recipe</a>
       </ul>
     </li>
   </div>
@@ -32,7 +42,12 @@
 
 <div class="row">
   <div class="col-12">
-    {{ recipe.description }}
+    <ul class="list-group">
+      <li class="list-group-item"
+        *ngFor="let ingredient of recipe.ingredients">
+        {{ ingredient.name }} - {{ ingredient.amount }}
+      </li>
+    </ul>
   </div>
 </div>
 

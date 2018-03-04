@@ -1,4 +1,5 @@
 import {Account} from '../components/new-account/new-account.component';
+import {EventEmitter, Output} from '@angular/core';
 
 export class AccountsService{
   accounts: Account[] = [
@@ -15,6 +16,8 @@ export class AccountsService{
       status:'unknown'
     },
   ];
+
+  @Output() statusUpdated:EventEmitter<string> = new EventEmitter<string>();
 
   addAccount(newAccount: Account){
     this.accounts.push(newAccount);

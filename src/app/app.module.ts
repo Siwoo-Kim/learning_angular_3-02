@@ -21,7 +21,24 @@ import { NewAccountComponent } from './components/new-account/new-account.compon
 import { AccountComponent } from './components/account/account.component';
 import {LoggingService} from './services/logging.service';
 import {AccountsService} from './services/accounts.service';
+import {RecipeService} from './project/services/recipe.service';
+import {ShoppingListService} from './project/services/shopping-list.service';
+import { HomeComponent } from './components/home/home.component';
+import { UsersComponent } from './components/users/users.component';
+import { Servers2Component } from './components/servers2/servers2.component';
+import {RouterModule, Routes} from '@angular/router';
+import { UserComponent } from './components/user/user.component';
+import { EditServerComponent } from './components/edit-server/edit-server.component';
+import { Server2Component } from './components/server2/server2.component';
+import {ServersService} from './services/servers.service';
 
+const appRoutes: Routes = [
+  {path: '', component: HomeComponent,pathMatch: 'full'},
+  {path: 'users', component: UsersComponent},
+  {path: 'users/:id/:name', component: UserComponent},
+  {path: 'servers', component: Servers2Component},
+  {path: 'servers/:id/edit', component: EditServerComponent},
+];
 
 @NgModule({
   declarations: [
@@ -42,13 +59,26 @@ import {AccountsService} from './services/accounts.service';
     UnlessDirective,
     DropdownDirective,
     NewAccountComponent,
-    AccountComponent
+    AccountComponent,
+    HomeComponent,
+    UsersComponent,
+    Servers2Component,
+    UserComponent,
+    EditServerComponent,
+    Server2Component
   ],
   imports: [
     FormsModule,
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
   ],
-  providers: [LoggingService,AccountsService],
+  providers: [
+    LoggingService,
+    AccountsService,
+    RecipeService,
+    ShoppingListService,
+    ServersService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
