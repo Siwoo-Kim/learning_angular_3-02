@@ -1,15 +1,17 @@
 
 <div class="row">
-  <div class="col-12">
+  <div class="col-4">
     <div class="list-group">
       <a
+        [ngStyle]="{'fontSize':'0.7em'}"
+        [routerLink]="['/users',user.id,user.name]"
         href=""
         class="list-group-item"
         *ngFor="let user of users"
       > {{ user.name }}</a>
     </div>
   </div>
-  <div class="col-12">
-    <app-user></app-user>
+  <div class="col-8">
+    <router-outlet></router-outlet>
   </div>
 </div>

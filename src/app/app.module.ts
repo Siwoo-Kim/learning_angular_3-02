@@ -26,19 +26,16 @@ import {ShoppingListService} from './project/services/shopping-list.service';
 import { HomeComponent } from './components/home/home.component';
 import { UsersComponent } from './components/users/users.component';
 import { Servers2Component } from './components/servers2/servers2.component';
-import {RouterModule, Routes} from '@angular/router';
 import { UserComponent } from './components/user/user.component';
 import { EditServerComponent } from './components/edit-server/edit-server.component';
 import { Server2Component } from './components/server2/server2.component';
 import {ServersService} from './services/servers.service';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AuthService} from './services/auth.service';
+import {AuthGuard} from './services/auth-guard.service';
+import {CanDeactivateGuard} from './components/edit-server/can-deactivate-edit-server.service';
 
-const appRoutes: Routes = [
-  {path: '', component: HomeComponent,pathMatch: 'full'},
-  {path: 'users', component: UsersComponent},
-  {path: 'users/:id/:name', component: UserComponent},
-  {path: 'servers', component: Servers2Component},
-  {path: 'servers/:id/edit', component: EditServerComponent},
-];
 
 @NgModule({
   declarations: [
@@ -65,19 +62,23 @@ const appRoutes: Routes = [
     Servers2Component,
     UserComponent,
     EditServerComponent,
-    Server2Component
+    Server2Component,
+    PageNotFoundComponent,
   ],
   imports: [
     FormsModule,
     BrowserModule,
-    RouterModule.forRoot(appRoutes),
+    AppRoutingModule,
   ],
   providers: [
     LoggingService,
     AccountsService,
     RecipeService,
     ShoppingListService,
-    ServersService
+    ServersService,
+    AuthService,
+    AuthGuard,
+    CanDeactivateGuard,
   ],
   bootstrap: [AppComponent]
 })
