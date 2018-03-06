@@ -113,56 +113,57 @@
 </div>
 -->
 
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-12">
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a
-          [routerLink]="['']"
-          routerLinkActive="link-active"
-          [routerLinkActiveOptions]="{exact: true}"
-          class="nav-link"
-          >Home</a></li>
-        <li class="nav-item">
-          <a
-            [routerLink]="['servers']"
-            routerLinkActive="link-active"
-            class="nav-link">Servers</a></li>
-        <li class="nav-item"><a
-          [routerLink]="['users']"
-          routerLinkActive="link-active"
-          class="nav-link">Users</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <router-outlet></router-outlet>
-    </div>
-    <!--<div class="col-12">
-      <app-home></app-home>
-    </div>
-    <div class="col-12">
-      <app-users></app-users>
-    </div>
-    <div class="col-12">
-      <app-servers2></app-servers2>
-    </div>-->
-  </div>
-</div>
+<!--<div class="container mt-3">-->
+  <!--<div class="row">-->
+    <!--<div class="col-12">-->
+      <!--<ul class="nav nav-tabs">-->
+        <!--<li class="nav-item">-->
+          <!--<a-->
+          <!--[routerLink]="['']"-->
+          <!--routerLinkActive="link-active"-->
+          <!--[routerLinkActiveOptions]="{exact: true}"-->
+          <!--class="nav-link"-->
+          <!--&gt;Home</a></li>-->
+        <!--<li class="nav-item">-->
+          <!--<a-->
+            <!--[routerLink]="['servers']"-->
+            <!--routerLinkActive="link-active"-->
+            <!--class="nav-link">Servers</a></li>-->
+        <!--<li class="nav-item"><a-->
+          <!--[routerLink]="['users']"-->
+          <!--routerLinkActive="link-active"-->
+          <!--class="nav-link">Users</a></li>-->
+      <!--</ul>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="row">-->
+    <!--<div class="col-12">-->
+      <!--<router-outlet></router-outlet>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;<div class="col-12">-->
+      <!--<app-home></app-home>-->
+    <!--</div>-->
+    <!--<div class="col-12">-->
+      <!--<app-users></app-users>-->
+    <!--</div>-->
+    <!--<div class="col-12">-->
+      <!--<app-servers2></app-servers2>-->
+    <!--</div>&ndash;&gt;-->
+  <!--</div>-->
+<!--</div>-->
 
 <!--recipe project-->
-<!--<app-header
+<app-header>
   (featureSelected)="onNavigate($event)"
-></app-header>
+</app-header>
 <div class="container-fluid mt-3" >
   <div class="row">
     <div class="col-12">
-      <app-recipes
-        *ngIf="loadedFeature == 'recipe'"
-      ></app-recipes>
-      <app-shopping-list *ngIf="loadedFeature == 'shopping-list'"></app-shopping-list>
+      <!--<app-recipes>-->
+        <!--*ngIf="loadedFeature == 'recipe'"-->
+      <!--</app-recipes>-->
+      <!--<app-shopping-list *ngIf="loadedFeature == 'shopping-list'"></app-shopping-list>-->
+      <router-outlet></router-outlet>
     </div>
   </div>
-</div>-->
+</div>

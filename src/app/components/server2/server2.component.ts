@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ServersService} from '../../services/servers.service';
-import {ActivatedRoute, Params, Router} from '@angular/router';
+import {ActivatedRoute, Data, Params, Router} from '@angular/router';
 
 @Component({
   selector: 'app-server2',
@@ -16,12 +16,15 @@ export class Server2Component implements OnInit{
               private router: Router){}
 
   ngOnInit(): void {
-    const id = +this.route.params['id'];
-    this.server = this.serverService.getServer(id);
-
-    this.route.params.subscribe((params: Params)=>{
-      this.server = this.serverService.getServer(+params['id']);
-    });
+    this.route.data.subscribe((data: Data) =>{
+      this.server = data['server'];
+    })
+    // const id = +this.route.params['id'];
+    // this.server = this.serverService.getServer(id);
+    //
+    // this.route.params.subscribe((params: Params)=>{
+    //   this.server = this.serverService.getServer(+params['id']);
+    // });
   }
 
   onEdit() {

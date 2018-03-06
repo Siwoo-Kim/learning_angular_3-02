@@ -72,10 +72,10 @@ export class AppComponent implements OnInit{
 
 
   /*recipe project*/
- loadedFeature:string = 'recipe';
-
-  onNavigate(feature: string) {
-    this.loadedFeature = feature;
-  }
+ // loadedFeature:string = 'recipe';
+ //
+ //  onNavigate(feature: string) {
+ //    this.loadedFeature = feature;
+ //  }
 
 }

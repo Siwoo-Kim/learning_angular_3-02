@@ -10,31 +10,41 @@
 
     <div class="collapse navbar-collapse justify-content-between" id="navbarTogglerDemo02">
       <ul class="navbar-nav nav">
-        <li class="nav-item active">
-          <a href="#"
+        <li class="nav-item">
+        <!--  <a href="#"
              class="nav-link"
             (click)="onSelect('recipe')"
-          >Recipes</a></li>
-        <li class="nav-item"><a
-          href="#"
+          >Recipes</a></li> -->
+          <a [routerLink]="['/recipes']"
+             routerLinkActive="active"
+             [routerLinkActiveOptions]="{exact: true}"
+            class="nav-link"
+          >Recipes</a>
+        <li class="nav-item">
+        <!--<a href="#"
           class="nav-link"
           (click)="onSelect('shopping-list')"
-        >Shopping List</a></li>
+        >Shopping List</a></li>-->
+        <a [routerLink]="['/shopping-list']"
+           routerLinkActive="active"
+           class="nav-link"
+        >Shopping List</a>
       </ul>
 
       <ul class="nav navbar-nav">
         <li class="dropdown">
           <button class="btn btn-outline-primary dropdown-toggle"
                   type="button"
+                  style="cursor: pointer;"
                   id="dropdownMenuButton"
                   data-toggle="dropdown"
                   aria-haspopup="true"
                   aria-expanded="false">
-            Dropdown button
+            Data
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a href="" class="dropdown-item">Save Date</a>
-            <a href="" class="dropdown-item">Fetch Date</a>
+            <a style="cursor: pointer;" class="dropdown-item">Save Date</a>
+            <a style="cursor: pointer;" class="dropdown-item">Fetch Date</a>
           </ul>
         </li>
       </ul>

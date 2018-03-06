@@ -6,15 +6,16 @@ import * as $ from 'jquery/dist/jquery.slim';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Output() featureSelected: EventEmitter<string> = new EventEmitter<string>();
+  // @Output() featureSelected: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSelect(feature: string) {
-    $('ul.navbar-nav > li').toggleClass('active');
-    this.featureSelected.emit(feature);
-  }
+  // onSelect(feature: string) {
+  //   $('ul.navbar-nav > li').toggleClass('active');
+  //   this.featureSelected.emit(feature);
+  // }
+
 }

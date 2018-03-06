@@ -35,6 +35,10 @@ import {AppRoutingModule} from './app-routing.module';
 import {AuthService} from './services/auth.service';
 import {AuthGuard} from './services/auth-guard.service';
 import {CanDeactivateGuard} from './components/edit-server/can-deactivate-edit-server.service';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
+import {ServerResolverService} from './components/server2/server-resolver.service';
+import { RecipeEditComponent } from './project/componets/recipes/recipe-edit/recipe-edit.component';
+import { RecipeStartComponent } from './project/componets/recipes/recipe-start/recipe-start.component';
 
 
 @NgModule({
@@ -64,6 +68,9 @@ import {CanDeactivateGuard} from './components/edit-server/can-deactivate-edit-s
     EditServerComponent,
     Server2Component,
     PageNotFoundComponent,
+    ErrorPageComponent,
+    RecipeEditComponent,
+    RecipeStartComponent,
   ],
   imports: [
     FormsModule,
@@ -79,6 +86,7 @@ import {CanDeactivateGuard} from './components/edit-server/can-deactivate-edit-s
     AuthService,
     AuthGuard,
     CanDeactivateGuard,
+    ServerResolverService
   ],
   bootstrap: [AppComponent]
 })
