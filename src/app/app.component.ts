@@ -2,6 +2,7 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {Account} from './components/new-account/new-account.component';
 import {UsePropertyDecorator} from 'codelyzer/propertyDecoratorBase';
 import {AccountsService} from './services/accounts.service';
+import {ObsUsersService} from './project/services/obs-users.service';
 
 @Component({
   selector: 'app-root',
@@ -63,11 +64,19 @@ export class AppComponent implements OnInit{
 
 */
   accounts: Account[] = [];
+  user1Activated: boolean = false;
+  user2Activated: boolean = false;
 
-  constructor(private accountService: AccountsService){}
+  constructor(private accountService: AccountsService,private usersService: ObsUsersService){}
 
   ngOnInit(): void {
     this.accounts = this.accountService.accounts;
+    this.usersService.userActivated.subscribe(
+      (id: number)=>{
+        if(id === 1){ this.user1Activated = true; }
+        else { this.user2Activated = true; }
+      }
+    )
   }
 
 

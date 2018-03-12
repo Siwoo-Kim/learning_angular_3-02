@@ -18,6 +18,8 @@ import {AppComponent} from './app.component';
 import {RecipeEditComponent} from './project/componets/recipes/recipe-edit/recipe-edit.component';
 import {RecipeDetailComponent} from './project/componets/recipes/recipe-detail/recipe-detail.component';
 import {RecipeStartComponent} from './project/componets/recipes/recipe-start/recipe-start.component';
+import {ObsUserComponent} from './components/observable/obs-user/obs-user.component';
+import {ObsHomeComponent} from './components/observable/obs-home/obs-home.component';
 
 // const appRoutes: Routes = [
 //   {path: '', component: HomeComponent, pathMatch: 'full'},
@@ -35,14 +37,23 @@ import {RecipeStartComponent} from './project/componets/recipes/recipe-start/rec
 //   {path : 'not-found', component: ErrorPageComponent,data:{message: 'Page not found!'} },
 //   {path : '**', redirectTo: '/not-found'}
 // ];
+/*
+const appRoutes: Routes = [
+  {path:'',redirectTo:'home',pathMatch:'full'},
+  {path: 'home',component: ObsHomeComponent},
+  {path: 'user/:id', component: ObsUserComponent},
+];
+*/
+
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/recipes', pathMatch : 'full'},
-  {path: 'recipes', component: RecipesComponent, children: [{
-      path: '', component: RecipeStartComponent,
-      path: 'edit', component: RecipeEditComponent,
-      path: ':id', component: RecipeDetailComponent,
-    }]},
+  {path: 'recipes', component: RecipesComponent, children: [
+      {path: '', component: RecipeStartComponent},
+      {path: 'new', component: RecipeEditComponent},
+      {path: ':id', component: RecipeDetailComponent},
+      {path: ':id/edit', component: RecipeEditComponent},
+    ]},
   {path: 'shopping-list', component: ShoppingListComponent},
 ];
 

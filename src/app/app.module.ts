@@ -39,6 +39,9 @@ import { ErrorPageComponent } from './components/error-page/error-page.component
 import {ServerResolverService} from './components/server2/server-resolver.service';
 import { RecipeEditComponent } from './project/componets/recipes/recipe-edit/recipe-edit.component';
 import { RecipeStartComponent } from './project/componets/recipes/recipe-start/recipe-start.component';
+import { ObsUserComponent } from './components/observable/obs-user/obs-user.component';
+import { ObsHomeComponent } from './components/observable/obs-home/obs-home.component';
+import {ObsUsersService} from './project/services/obs-users.service';
 
 
 @NgModule({
@@ -71,6 +74,8 @@ import { RecipeStartComponent } from './project/componets/recipes/recipe-start/r
     ErrorPageComponent,
     RecipeEditComponent,
     RecipeStartComponent,
+    ObsUserComponent,
+    ObsHomeComponent,
   ],
   imports: [
     FormsModule,
@@ -86,7 +91,8 @@ import { RecipeStartComponent } from './project/componets/recipes/recipe-start/r
     AuthService,
     AuthGuard,
     CanDeactivateGuard,
-    ServerResolverService
+    ServerResolverService,
+    ObsUsersService
   ],
   bootstrap: [AppComponent]
 })
